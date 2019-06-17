@@ -1,0 +1,27 @@
+
+//ARRAY BASED APPROACH
+const streamReducer = (state = [], action) =>{
+     switch(action.type){
+          case EDIT_STREAM:
+          return state.map(stream => {
+               if(stream.id === action.payload.id){
+                    return action.payload
+               }else{
+                    return stream
+               }
+          })
+          default:
+          return stream
+     }
+}
+
+//OBJECT BASED APPROACH
+
+const streamReducer = (state = {}, action) => {
+     switch(action.type){
+          case EDIT_STREAM:
+          returu { ...state, [action.payload.id]: action.payload}
+          default:
+          return state
+     }
+}
